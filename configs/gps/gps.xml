@@ -32,7 +32,7 @@
        LtoDir="/data/system/gps/"
 
        IgnoreJniTime="true"
-       HulaEnable="false"
+       HulaEnable="true"
        AssertEnabled="false"
        DisablePglorNmeaCallback="true"
    />

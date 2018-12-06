@@ -19,3 +19,11 @@ type sysfs_multipdp_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_camera_writable, fs_type, sysfs_type, mlstrustedobject;
 
 allow sysfs_type tmpfs:filesystem associate;
+
+type vfs_device, dev_type;
+
+type batch_io_device, dev_type;
+
+type fingerprint_data_file, file_type;
+
+type biometrics_data_file, file_type;
