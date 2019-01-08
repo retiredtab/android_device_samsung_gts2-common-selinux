@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_AAPT_CONFIG := xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi mdpi
+PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi
 
 PRODUCT_PACKAGES += \
     libion \
