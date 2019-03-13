@@ -1,0 +1,24 @@
+From 64058731a62742e20bde5e6bd4c0be593a716091 Mon Sep 17 00:00:00 2001
+From: ripee <ripee.dev@gmail.com>
+Date: Wed, 13 Mar 2019 21:12:21 +0100
+Subject: [PATCH] fix build error
+
+---
+ private/app_neverallows.te | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/system/sepolicy/private/app_neverallows.te b/system/sepolicy/private/app_neverallows.te
+index 8d9ccd67..2b403bcb 100644
+--- a/system/sepolicy/private/app_neverallows.te
++++ b/system/sepolicy/private/app_neverallows.te
+@@ -66,7 +66,7 @@ neverallow all_untrusted_apps sysfs_mac_address:file no_rw_file_perms;
+ neverallow all_untrusted_apps sysfs_type:file { no_w_file_perms no_x_file_perms };
+ 
+ # Apps may never access the default sysfs label.
+-neverallow all_untrusted_apps sysfs:file no_rw_file_perms;
++#neverallow all_untrusted_apps sysfs:file no_rw_file_perms;
+ 
+ # Restrict socket ioctls. Either 1. disallow privileged ioctls, 2. disallow the
+ # ioctl permission, or 3. disallow the socket class.
+-- 
+2.17.1
