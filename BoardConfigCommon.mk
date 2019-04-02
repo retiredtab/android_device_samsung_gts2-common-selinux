@@ -183,7 +183,7 @@ BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5433
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/gts2-common/sepolicy
+#BOARD_SEPOLICY_DIRS += device/samsung/gts2-common/sepolicy
 
 # Sensors
 #TARGET_NO_SENSOR_PERMISSION_CHECK := true
