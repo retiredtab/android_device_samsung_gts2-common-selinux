@@ -339,10 +339,24 @@ on boot
 
     # WLAN
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
+	
+    # ZRAM setup
+    write /sys/block/zram0/comp_algorithm lz4
+    write /proc/sys/vm/page-cluster 0
 
 on fs
     mount_all /fstab.universal5433
     setprop ro.crypto.fuse_sdcard true
+	
+    # Start HW service manager early
+    start hwservicemanager
+
+on late-fs
+    # Start services for bootanim
+    start surfaceflinger
+    start bootanim
+    start configstore-hal-1-0
+    start gralloc-2-0
 
 # MIF
     chown radio radio /sys/devices/virtual/misc/multipdp/waketime
@@ -528,6 +542,54 @@ on property:sys.boot_completed=1
 on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
+	
+# LPM
+on property:ro.bootmode=charger
+    mount ext4 /dev/block/platform/15540000.dwmmc0/by-name/SYSTEM /system wait ro
+    wait /dev/block/platform/15540000.dwmmc0/by-name/EFS
+    mount ext4 /dev/block/platform/15540000.dwmmc0/by-name/EFS /efs nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit,errors=panic
+    class_start charger
+
+service cameraserver /system/bin/cameraserver
+    class main
+    user cameraserver
+    group media_rw audio camera drmrpc inet shell sdcard_r system
+	
+	
+# SensorHub (Location Hub)
+service lhd /system/vendor/bin/lhd /system/vendor/etc/lhd.conf
+    class main
+    user gps
+    group system inet net_raw
+    ioprio be 0
+
+on charger
+    # Set cpu governor to powersave while in charging mode
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
+
+    # EHCI runtime enable for LPA
+    write /sys/devices/platform/s5p-ehci/power/control auto
+
+    # Do not set any USB mode while charging
+    setprop sys.usb.config charging
+
+# SENSOR FRAMEWORK : starts fingerprintService
+service vcsFPService /vendor/bin/vcsFPService
+    class late_start
+    user system
+    group system
+    
+on property:sys.mobicoredaemon.enable=true
+    start cs_service
+    write /proc/iccc_ready 1    
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group input	
 
 # Charging
 service charger /charger
@@ -538,7 +600,7 @@ service charger /charger
 service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     class main
     user gps
-    group system inet net_raw wakelock
+    group system inet net_raw
     ioprio be 0
     seclabel u:r:gpsd:s0
     setenv LD_PRELOAD "system/lib/libsensor.so"
