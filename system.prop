@@ -45,6 +45,8 @@ lockscreen.rot_override=true
 
 # WiFi
 wifi.interface=wlan0
+wifi.direct.non-concurrent=true
+wifi.direct.interface=p2p-dev-wlan0
 
 #Treble
 persist.media.treble_omx=false
