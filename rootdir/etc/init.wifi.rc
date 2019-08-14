@@ -23,9 +23,6 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
 
     # copy wpa_supplicant.conf
-    copy /system/vendor/etc/wifi/wpa_supplicant.conf /data/vendor/wifi/wpa/wpa_supplicant.conf
-    chown wifi system /data/vendor/wifi/wpa/wpa_supplicant.conf
-    chmod 0660 /data/vendor/wifi/wpa/wpa_supplicant.conf
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
     # for WIFI TRP/TIS
@@ -127,12 +124,10 @@ service macloader /vendor/bin/macloader
     user system
     group wifi
     oneshot
-    seclabel u:r:macloader:s0
 
 # Run deferred initcalls of builtin kernel modules (bcmdhd)
 service wifiloader /system/bin/wifiloader
     class main
-    seclabel u:r:wifiloader:s0
     oneshot
 
 on property:init.svc.macloader=stopped
@@ -143,7 +138,7 @@ on property:init.svc.macloader=stopped
     chmod 0664 /data/.rev
 # end of WiFi MFG (TestMode)
 
-#service olsrd /system/bin/olsrd -f /etc/wifi/olsrd.conf
-#    class main
-#    disabled
-#    oneshot
+service olsrd /system/bin/olsrd -f /etc/wifi/olsrd.conf
+    class main
+    disabled
+    oneshot
