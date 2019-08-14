@@ -3,7 +3,6 @@ af.fast_track_multiplier=1
 
 # Bluetooth
 ro.bt.bdaddr_path="/efs/bluetooth/bt_addr"
-qcom.bluetooth.soc=rome
 
 # Dalvik/Art
 dalvik.vm.heapstartsize=8m
@@ -59,3 +58,17 @@ ro.enable_boot_charger_mode=1
 
 # USB
 persist.sys.usb.config=mtp
+
+# Enable ADB Debugging By Default & Disable USB Debugging Popup
+persist.adb.notify=0
+persist.service.adb.enable=1 
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+sys.usb.ffs.aio_compat=1
+
+#
+# HW Composer
+#
+debug.hwc.force_gpu=1
+debug.hwc.winupdate=0
+persist.sys.ui.hw=false
