@@ -33,9 +33,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bt.bdaddr_path="/efs/bluetooth/bt_addr"
 
 # Camera
 PRODUCT_PACKAGES += \

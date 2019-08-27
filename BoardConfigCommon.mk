@@ -149,6 +149,10 @@ SKIP_DISPLAY_BLANK_CTRL := true
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
+# Legacy BLOB Support
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    ro.product.first_api_level=21
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := false
 
