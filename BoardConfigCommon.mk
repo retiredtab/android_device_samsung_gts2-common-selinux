@@ -198,6 +198,10 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
     /system/vendor/lib/libexynoscamera.so|libexynoscamera_shim.so \
     /system/vendor/bin/gpsd|libsensor_shim.so
+	
+# Legacy BLOB Support
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /system/vendor/bin/hw/rild=27	
 
 # Shims: libui
 TARGET_LD_SHIM_LIBS += \
