@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
 # Flat device tree for boot image
-PRODUCT_PACKAGES += \
+RODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
 # Gps
