@@ -518,6 +518,9 @@ on late-fs
     chown system media_rw /sys/class/mdnie/mdnie/scenario
     chown system system /sys/class/mdnie/mdnie/accessibility
     chown system system /sys/class/mdnie/mdnie/sensorRGB
+	
+# Default MDNIE mode (cinema)
+    write /sys/class/mdnie/mdnie/mode 4	
 
 # Copy DRM Key
     copy /system/app/wv.keys /factory/wv.keys
