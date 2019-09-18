@@ -46,6 +46,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-legacy \
     camera.device@1.0-impl-legacy
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/camera/external_camera_config.xml:system/vendor/etc/external_camera_config.xml
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images \
