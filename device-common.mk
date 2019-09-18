@@ -2,9 +2,10 @@ LOCAL_PATH := device/samsung/gts2-common
 
 PRODUCT_CHARACTERISTICS := tablet
 
-# APN Definitions - override incomplete/broken lineageos version with Google master version
+# APN Definitions - override incomplete/broken lineageos version with Samsung version
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/telephony/apns-full-conf.xml:system/etc/apns-conf.xml
+    $(LOCAL_PATH)/configs/telephony/apns-conf.xml:system/etc/apns-conf.xml \
+    $(LOCAL_PATH)/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
