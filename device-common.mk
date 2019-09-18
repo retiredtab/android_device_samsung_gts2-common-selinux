@@ -84,6 +84,10 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #   AdvancedDisplay
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.gts2
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
