@@ -48,7 +48,6 @@ LOCAL_SRC_FILES		:= etc/init.samsung.rc
 LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
-
 include $(CLEAR_VARS)
 LOCAL_MODULE		:= sswap
 LOCAL_MODULE_TAGS	:= optional eng

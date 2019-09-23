@@ -57,7 +57,8 @@ PRODUCT_COPY_FILES += \
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images \
-    lineage_charger_res_images
+    lineage_charger_res_images \
+    charger
 
 # Codecs
 PRODUCT_PACKAGES += \
@@ -254,6 +255,7 @@ PRODUCT_PACKAGES += \
     init.universal5433.usb.rc \
     init.samsung.rc \
     init.wifi.rc \
+    init.power.rc \
     sswap
 
 # RenderScript HAL
