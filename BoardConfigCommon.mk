@@ -133,9 +133,11 @@ TARGET_USES_ION := true
 # Hidl
 DEVICE_MANIFEST_FILE := device/samsung/gts2-common/configs/manifest.xml
 			   
-# Hardware
-BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
-BOARD_HARDWARE_CLASS += device/samsung/gts2-common/lineagehw
+# Lineage hardware
+ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
+JAVA_SOURCE_OVERLAYS := \
+    org.lineageos.hardware|$(LOCAL_PATH)/lineagehw|**/*.java
+endif
 
 # HDMI
 BOARD_USES_NEW_HDMI := true
