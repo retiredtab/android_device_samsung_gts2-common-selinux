@@ -45,6 +45,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     camera.universal5433 \
     libexynoscamera_shim \
+		libstagefright_shim \
     Snap
 
 PRODUCT_PACKAGES += \
