@@ -625,8 +625,6 @@ service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     user gps
     group system inet net_raw
     ioprio be 0
-    seclabel u:r:gpsd:s0
-    setenv LD_PRELOAD "system/lib/libsensor.so"
 
 service sswap /sbin/sswap -s -f 1536
     class core
