@@ -62,6 +62,7 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/universal5433
 KERNEL_TOOLCHAIN_PREFIX := arm-linux-androideabi-
 BOARD_KERNEL_IMAGE_NAME := zImage
+TARGET_LINUX_KERNEL_VERSION := 3.10
 
 # Ant+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
