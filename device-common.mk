@@ -66,9 +66,6 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libExynosOMX_Core
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
-
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
