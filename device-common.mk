@@ -66,24 +66,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libExynosOMX_Core
 
-#PRODUCT_PACKAGES += \
-#   libOMX.Exynos.AAC.Decoder \
-#   libOMX.Exynos.AVC.Decoder \
-#   libOMX.Exynos.AVC.Encoder \
-#   libOMX.Exynos.HEVC.Decoder \
-#   libOMX.Exynos.MP3.Decoder \
-#   libOMX.Exynos.MPEG4.Decoder \
-#   libOMX.Exynos.MPEG4.Encoder \
-#   libOMX.Exynos.VP8.Decoder \
-#   libOMX.Exynos.VP8.Encoder \
-#   libOMX.Exynos.WMA.Encoder
-
-PRODUCT_PACKAGES += \
-    libExynosOMX_shim \
-    libui_shim
-
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc \
     $(COMMON_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
 
 # Configstore
