@@ -536,6 +536,9 @@ on late-fs
     chown radio system /efs
     chmod 0771 /efs
 
+# ARGOSD network_throughput
+    chown system system /dev/network_throughput
+    
 # permission for CHARGING
     chown system radio /sys/class/power_supply/battery/batt_discharging_check
     chown system radio /sys/class/power_supply/battery/batt_discharging_check_adc
@@ -623,3 +626,9 @@ service sswap /sbin/sswap -s -f 1536
     user root
     group root
     oneshot
+
+# ARGOSD
+service argos-daemon /vendor/bin/argosd
+    class main
+    user system
+    group system radio
