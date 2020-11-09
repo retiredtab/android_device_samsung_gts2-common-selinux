@@ -15,6 +15,62 @@
 -->
 
 <MediaCodecs>
+    <Encoders>
+        <MediaCodec name="OMX.Exynos.AVC.Encoder" type="video/avc" update="true" >
+            <Limit name="measured-frame-rate-320x240" range="611-631" />
+            <Limit name="measured-frame-rate-720x480" range="360-360" />
+            <Limit name="measured-frame-rate-1280x720" range="166-173" />
+            <Limit name="measured-frame-rate-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Exynos.H263.Encoder" type="video/3gpp" update="true" >
+            <Limit name="measured-frame-rate-176x144" range="200-440" />
+            <Limit name="measured-frame-rate-352x288" range="150-330" />
+            <Limit name="measured-frame-rate-704x576" range="100-220" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Exynos.MPEG4.Encoder" type="video/mp4v-es" update="true" >
+            <Limit name="measured-frame-rate-320x240" range="593-623" />
+            <Limit name="measured-frame-rate-720x480" range="360-360" />
+            <Limit name="measured-frame-rate-1280x720" range="135-135" />
+            <Limit name="measured-frame-rate-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Exynos.VP8.Encoder" type="video/x-vnd.on2.vp8" update="true" >
+            <Limit name="measured-frame-rate-320x180" range="200-440" />
+            <Limit name="measured-frame-rate-640x360" range="150-330" />
+            <Limit name="measured-frame-rate-1280x720" range="40-88" />
+            <Limit name="measured-frame-rate-1920x1080" range="40-88" />
+        </MediaCodec>
+        <!--MediaCodec name="OMX.Exynos.HEVC.Encoder" type="video/hevc" update="true" >
+            <Limit name="measured-frame-rate-320x240" range="200-440" />
+            <Limit name="measured-frame-rate-720x480" range="120-264" />
+            <Limit name="measured-frame-rate-1280x720" range="50-110" />
+            <Limit name="measured-frame-rate-1920x1080" range="40-88" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Exynos.VP9.Encoder" type="video/x-vnd.on2.vp9" update="true" >
+            <Limit name="measured-frame-rate-320x180" range="200-440" />
+            <Limit name="measured-frame-rate-640x360" range="150-330" />
+            <Limit name="measured-frame-rate-1280x720" range="80-176" />
+            <Limit name="measured-frame-rate-1920x1080" range="60-132" />
+        </MediaCodec-->
+
+        <MediaCodec name="OMX.google.h264.encoder" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="498-498" />
+            <Limit name="measured-frame-rate-720x480" range="156-156" />
+            <Limit name="measured-frame-rate-1280x720" range="66-66" />
+            <Limit name="measured-frame-rate-1920x1080" range="31-31" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" update="true">
+            <Limit name="measured-frame-rate-176x144" range="634-634" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" update="true">
+            <Limit name="measured-frame-rate-176x144" range="896-896" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.vp8.encoder" type="video/x-vnd.on2.vp8" update="true">
+            <Limit name="measured-frame-rate-320x180" range="600-600" />
+            <Limit name="measured-frame-rate-640x360" range="230-230" />
+            <Limit name="measured-frame-rate-1280x720" range="64-64" />
+            <Limit name="measured-frame-rate-1920x1080" range="26-26" />
+        </MediaCodec>
+    </Encoders>
     <Decoders>
         <MediaCodec name="OMX.Exynos.mpeg4.dec" type="video/mp4v-es" update="true" >
             <Limit name="measured-frame-rate-176x144" range="400-650" />        	
