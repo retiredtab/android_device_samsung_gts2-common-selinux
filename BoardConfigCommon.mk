@@ -132,7 +132,7 @@ TARGET_USES_GRALLOC1_ADAPTER := true
 TARGET_USES_ION := true
 
 # Hidl
-DEVICE_MANIFEST_FILE := device/samsung/gts2-common/configs/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 			   
 # Lineage hardware
 ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
@@ -142,6 +142,9 @@ endif
 
 # HDMI
 BOARD_HDMI_INCAPABLE := true
+
+# Hidl
+DEVICE_MANIFEST_FILE := device/samsung/gts2-common/manifest.xml
 
 # HWCServices
 #BOARD_USES_HWC_SERVICES := true
