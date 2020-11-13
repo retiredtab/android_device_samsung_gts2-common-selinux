@@ -523,8 +523,8 @@ on late-fs
     chown system system /sys/class/mdnie/mdnie/lux
     chmod 0660 /sys/class/mdnie/mdnie/lux
 
-# Default MDNIE mode (cinema)
-    write /sys/class/mdnie/mdnie/mode 4
+# Reset mDNIe scenario
+     write /sys/class/mdnie/mdnie/scenario 0
 
 # Copy DRM Key
     copy /system/app/wv.keys /factory/wv.keys
