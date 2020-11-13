@@ -1,8 +1,8 @@
-import init.universal5433.usb.rc
-import init.wifi.rc
-import init.baseband.rc
-import init.samsung.rc
-import init.power.rc
+import /system/vendor/etc/init/hw/init.universal5433.usb.rc
+import /system/vendor/etc/init/hw/init.wifi.rc
+import /system/vendor/etc/init/hw/init.baseband.rc
+import /system/vendor/etc/init/hw/init.samsung.rc
+import /system/vendor/etc/init/hw/init.power.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
