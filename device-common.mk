@@ -109,6 +109,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 # Gps
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.universal5433 \
+    android.hardware.gnss@1.0-service.universal5433 \
     libshim_gpsd
 
 PRODUCT_COPY_FILES += \
