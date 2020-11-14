@@ -244,7 +244,61 @@ on boot
     # MTP permission
     chmod 0660 /dev/usb_mtp_gadget
     chown system mtp /dev/usb_mtp_gadget
-    mkdir /dev/socket/mtp 0770 system mtp	
+    mkdir /dev/socket/mtp 0770 system mtp
+
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_enter_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_enter_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_enter_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_enter_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_exit_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_exit_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/multi_exit_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/multi_exit_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_enter_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_enter_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_enter_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_enter_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_exit_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_exit_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/single_exit_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/single_exit_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/mode
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/mode
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/enforced_mode
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/enforced_mode
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/param_index
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/param_index
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/cpu_util
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/cpu_util
+
+    # Change permission for dvfshelper
+    chown radio system /sys/power/cpufreq_table
+    chmod 0664 /sys/power/cpufreq_table
+    chown radio system /sys/power/cpufreq_min_limit
+    chmod 0664 /sys/power/cpufreq_min_limit
+    chown radio system /sys/power/cpufreq_max_limit
+    chmod 0664 /sys/power/cpufreq_max_limit
+
+    chown radio system /sys/devices/11400000.mali/dvfs_table
+    chown radio system /sys/devices/11400000.mali/dvfs_min_lock
+    chown radio system /sys/devices/11400000.mali/dvfs_max_lock
+    chmod 0664 /sys/devices/11400000.mali/dvfs_table
+    chmod 0664 /sys/devices/11400000.mali/dvfs_min_lock
+    chmod 0664 /sys/devices/11400000.mali/dvfs_max_lock
+
+    chown radio system /sys/class/devfreq/bus_mif.7/available_frequencies
+    chown radio system /sys/class/devfreq/bus_mif.7/min_freq
+    chown radio system /sys/class/devfreq/bus_mif.7/max_freq
+    chmod 0664 /sys/class/devfreq/bus_mif.7/available_frequencies
+    chmod 0664 /sys/class/devfreq/bus_mif.7/min_freq
+    chmod 0664 /sys/class/devfreq/bus_mif.7/max_freq
+
+    chown radio system /sys/class/devfreq/bus_int.6/available_frequencies
+    chown radio system /sys/class/devfreq/bus_int.6/min_freq
+    chown radio system /sys/class/devfreq/bus_int.6/max_freq
+    chmod 0664 /sys/class/devfreq/bus_int.6/available_frequencies
+    chmod 0664 /sys/class/devfreq/bus_int.6/min_freq
+    chmod 0664 /sys/class/devfreq/bus_int.6/max_freq
 
     # NPS permission
     mkdir /dev/socket/nps 0770 system system
@@ -322,8 +376,6 @@ on boot
    chown system radio /sys/class/power_supply/battery/siop_event
    chown system radio /sys/class/power_supply/battery/batt_temp
    chown system radio /sys/class/power_supply/battery/wc_enable
-   chown system nfc /sys/class/power_supply/battery/wc_control
-   chown system nfc /sys/class/power_supply/battery/wc_control_cnt
    chown system radio /sys/class/power_supply/battery/update
    chown system radio /sys/class/power_supply/battery/batt_wdt_control
    chown system radio /sys/class/power_supply/battery/factory_mode_relieve
@@ -531,15 +583,6 @@ on boot
     chown system system /sys/class/timed_output/vibrator/enable
     chown system system /sys/class/timed_output/vibrator/intensity
     chown system system /sys/class/timed_output/vibrator/multi_freq
-
-#Store Gyro cal data
-    chown system system /efs/FactoryApp/gyro_cal_data
-    chmod 0660 /efs/FactoryApp/gyro_cal_data
-
-# Assign TCP buffer thresholds to be ceiling value of technology maximums
-# Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  1048576
-    write /proc/sys/net/core/wmem_max  2097152
 
 # MobiCore startup
 service mobicore /vendor/bin/mcDriverDaemon -r /vendor/app/FFFFFFFF000000000000000000000001.drbin -r /vendor/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /vendor/app/mcRegistry/ffffffffd00000000000000000000016.tlbin
