@@ -1,14 +1,6 @@
 # Audio
 af.fast_track_multiplier=1
 
-# Dalvik/Art
-dalvik.vm.heapstartsize=8m
-dalvik.vm.heapgrowthlimit=256m
-dalvik.vm.heapsize=512m
-dalvik.vm.heaptargetutilization=0.75
-dalvik.vm.heapminfree=2m
-dalvik.vm.heapmaxfree=8m
-
 # HWUI
 ro.hwui.texture_cache_size=88
 ro.hwui.layer_cache_size=58
