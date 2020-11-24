@@ -64,7 +64,7 @@ lockscreen.rot_override=true
 #media.stagefright.less-secure=1
 debug.stagefright.ccodec=0
 drm.service.enabled=true
-debug.sf.disable_gl_backpressure=1
+debug.sf.disable_backpressure=1
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 
