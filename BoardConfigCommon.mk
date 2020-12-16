@@ -16,7 +16,7 @@ TARGET_CPU_VARIANT := cortex-a53.a57
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
-TARGET_SLSI_VARIANT := cm
+TARGET_SLSI_VARIANT := bsp
 TARGET_SOC := exynos5433
 
 # big.LITTLE load balancing
