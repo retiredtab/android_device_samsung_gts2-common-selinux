@@ -4,8 +4,8 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # APN Definitions - override incomplete/broken lineageos version with Samsung version
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/telephony/apns-conf.xml:system/etc/apns-conf.xml \
-    $(COMMON_PATH)/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
+    $(COMMON_PATH)/configs/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
+    $(COMMON_PATH)/configs/telephony/spn-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/spn-conf.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -59,7 +59,7 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl-legacy
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/camera/external_camera_config.xml:system/vendor/etc/external_camera_config.xml
+    $(COMMON_PATH)/configs/camera/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -259,7 +259,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
-
+    
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
