@@ -51,7 +51,6 @@ on init
     symlink /data/app /factory
 
 
-    mkdir /efs 0771 radio system
     symlink /dev/block/platform/15540000.dwmmc0/by-name/RADIO /dev/mbin0
     restorecon /dev/mbin0
 
