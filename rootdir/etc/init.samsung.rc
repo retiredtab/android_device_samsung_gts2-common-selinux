@@ -179,6 +179,10 @@ on post-fs
     chown system log /proc/sec_log
 
 on post-fs-data
+    # avoid USB crash
+	setprop persist.adb.nonblocking_ffs 0
+	setprop ro.adb.nonblocking_ffs 0
+	
     # h2k
     mkdir /efs/cpk 0771 radio system
     chmod 0644 /efs/redata.bin
