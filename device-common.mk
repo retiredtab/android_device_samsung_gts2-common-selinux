@@ -100,7 +100,6 @@ PRODUCT_PACKAGES += \
 # Gps
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
-    gps.default \
     libshim_gpsd
 
 PRODUCT_COPY_FILES += \
@@ -112,11 +111,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := xlarge
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi
-
-PRODUCT_PACKAGES += \
-    libion \
-    libfimg \
-    hwcomposer.exynos5
 
 PRODUCT_PACKAGES += \
     libion \
