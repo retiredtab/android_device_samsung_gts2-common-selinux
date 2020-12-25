@@ -24,7 +24,7 @@ LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libsensor
 
-LOCAL_MODULE := libsensor_shim
+LOCAL_MODULE := libshim_gpsd
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_VENDOR_MODULE := true
