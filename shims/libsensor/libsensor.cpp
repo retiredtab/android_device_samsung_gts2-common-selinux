@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "libsensor_shim"
+#define LOG_TAG "libshim_gpsd"
 #define LOG_NDEBUG 0
 
 #include <cutils/log.h>
