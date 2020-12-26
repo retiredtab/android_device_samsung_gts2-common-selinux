@@ -61,6 +61,7 @@ lockscreen.rot_override=true
 #media.stagefright.less-secure=1
 debug.stagefright.ccodec=0
 drm.service.enabled=true
+debug.sf.disable_gl_backpressure=1
 
 # Network
 # Define default initial receive window size in segments.
