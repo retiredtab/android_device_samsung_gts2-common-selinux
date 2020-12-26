@@ -1,0 +1,13 @@
+cc_library_shared {
+    name: "libshim_gpsd",
+    proprietary: true,
+
+    srcs: [
+	"libsensor.cpp",
+    ],
+
+    shared_libs: [
+	"liblog",
+        "libsensor",
+    ],
+}
