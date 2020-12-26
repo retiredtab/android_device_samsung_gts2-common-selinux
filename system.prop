@@ -62,6 +62,8 @@ lockscreen.rot_override=true
 debug.stagefright.ccodec=0
 drm.service.enabled=true
 debug.sf.disable_gl_backpressure=1
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
 
 # Network
 # Define default initial receive window size in segments.
