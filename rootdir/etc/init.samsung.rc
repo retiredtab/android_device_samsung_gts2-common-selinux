@@ -182,16 +182,6 @@ on post-fs-data
     # avoid USB crash
 	setprop persist.adb.nonblocking_ffs 0
 	setprop ro.adb.nonblocking_ffs 0
-	
-    # h2k
-    mkdir /efs/cpk 0771 radio system
-    chmod 0644 /efs/redata.bin
-    chmod 0644 /efs/cpk/redata.bin
-    chown radio radio /efs/h2k.dat
-    chown radio radio /efs/cpk/h2k.dat
-    chmod 0644 /efs/h2k.dat
-    chmod 0644 /efs/cpk/h2k.dat
-    chown system system /efs/drm/h2k
   
     # mobicore
     export MC_AUTH_TOKEN_PATH /efs
@@ -204,14 +194,6 @@ on post-fs-data
     mkdir /system/etc/security/.drm 0775
     chown root root /system/etc/security/.drm
     chmod 0775 /system/etc/security/.drm
-
-    # Added for Playready DRM Support
-    mkdir /data/.drm 0775
-    chown drm system /data/.drm
-    chmod 0775 /data/.drm
-    mkdir /data/.drm/.playready 0775
-    chown drm system /data/.drm/.playready
-    chmod 0775 /data/.drm/.playready
 
     # Added drm folder to copy drm plugins
     mkdir /system/lib/drm 0775
@@ -291,6 +273,16 @@ on boot
     chmod 0664 /sys/class/devfreq/bus_int.6/min_freq
     chmod 0664 /sys/class/devfreq/bus_int.6/max_freq
 
+    # h2k
+    mkdir /efs/cpk 0771 radio system
+    chmod 0644 /efs/redata.bin
+    chmod 0644 /efs/cpk/redata.bin
+    chown radio radio /efs/h2k.dat
+    chown radio radio /efs/cpk/h2k.dat
+    chmod 0644 /efs/h2k.dat
+    chmod 0644 /efs/cpk/h2k.dat
+    chown system system /efs/drm/h2k
+    
     # NPS permission
     mkdir /dev/socket/nps 0770 system system
 
