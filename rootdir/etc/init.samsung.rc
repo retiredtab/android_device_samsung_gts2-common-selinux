@@ -206,7 +206,6 @@ on post-fs-data
     chmod 0775 /system/etc/security/.drm
 
     # Added for Playready DRM Support
-	cpyContent_rmdir /data/data/.drm
     mkdir /data/.drm 0775
     chown drm system /data/.drm
     chmod 0775 /data/.drm
