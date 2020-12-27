@@ -81,6 +81,10 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
     android.hardware.configstore@1.1-service
 
+# Configstore
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 
+    
 # Display
 #PRODUCT_PACKAGES += \
 #   AdvancedDisplay
