@@ -15,25 +15,21 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default \
-    audio.primary.universal5433 \
-    libtinycompress
-
-#PRODUCT_PACKAGES += \
-#	libseirenhw
-
-PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl
+    android.hardware.audio.effect@2.0-impl \
+    audio.a2dp.default \
+    audio.primary.universal5433 \
+    audio.r_submix.default \
+    audio.usb.default \
+#   libseirenhw \
+    libtinycompress
 	
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
@@ -53,35 +49,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl-legacy \
+    camera.device@1.0-impl-legacy \
     camera.universal5433 \
     libexynoscamera_shim \
-		libstagefright_shim \
+    libstagefright_shim \
     Snap
-
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl-legacy \
-    camera.device@1.0-impl-legacy
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
 
 # Charger
 PRODUCT_PACKAGES += \
+    charger \
     charger_res_images \
-    lineage_charger_res_images \
-    charger
+    lineage_charger_res_images
 
 # Codecs
 PRODUCT_PACKAGES += \
-    libstagefrighthw \
-    libExynosOMX_Core
+    libExynosOMX_Core \
+    libstagefrighthw
 
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
     android.hardware.configstore@1.1-service
 
-# Configstore
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 
     
@@ -104,8 +97,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    libbauthtzcommon_shim \
-    android.hardware.biometrics.fingerprint@2.1-service.samsung
+    android.hardware.biometrics.fingerprint@2.1-service.samsung \
+    libbauthtzcommon_shim
 
 # Flat device tree for boot image
 RODUCT_HOST_PACKAGES += \
@@ -131,13 +124,13 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi
 
 PRODUCT_PACKAGES += \
-    libion \
-    libfimg \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
-    libhwc2on1adapter
+    libfimg \
+    libhwc2on1adapter \
+    libion
 
 # Healthd
 PRODUCT_PACKAGES += \
@@ -180,10 +173,8 @@ PRODUCT_COPY_FILES += \
 
 # Memory
 PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-impl \
     memtrack.exynos5
-
-PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl
 
 # MobiCore
 #PRODUCT_PACKAGES += \
@@ -238,11 +229,11 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.universal5433 \
+    init.power.rc \
+    init.samsung.rc \
     init.universal5433.rc \
     init.universal5433.usb.rc \
-    init.samsung.rc \
     init.wifi.rc \
-    init.power.rc \
     sswap
 
 # RenderScript HAL
@@ -271,7 +262,7 @@ PRODUCT_PACKAGES += \
 
 # USB HAL
 PRODUCT_PACKAGES += \
-	android.hardware.usb@1.0-service.basic
+    android.hardware.usb@1.0-service.basic
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -284,15 +275,15 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.legacy \
-    macloader \
-    wifiloader \
     hostapd \
     libwpa_client \
-    wpa_supplicant \
-    wpa_supplicant.conf \
+    macloader \
     wificond \
+    wifiloader \
     wifilogd \
-    wlutil
+    wlutil \
+    wpa_supplicant \
+    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
