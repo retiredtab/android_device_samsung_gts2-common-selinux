@@ -434,4 +434,4 @@ static inline const char* map_usage_to_memtrack(uint32_t usage) {
 
 __END_DECLS
 
-#endif // ANDROID_GRALLOC_INTERFACE_H
+#endif
