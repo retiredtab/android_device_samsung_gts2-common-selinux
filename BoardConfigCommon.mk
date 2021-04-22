@@ -108,6 +108,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# Display
+TARGET_SCREEN_DENSITY := 320
+
 # FIMG2D
 BOARD_USES_SKIA_FIMGAPI := true
 BOARD_USES_NEON_BLITANTIH := true
