@@ -230,7 +230,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.universal5433 \
-    init.power.rc \
     init.samsung.rc \
     init.universal5433.rc \
     init.universal5433.usb.rc \
