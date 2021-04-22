@@ -55,8 +55,6 @@ debug.stagefright.omx_default_rank=0
 
 # WiFi
 wifi.interface=wlan0
-wifi.direct.non-concurrent=true
-wifi.direct.interface=p2p-dev-wlan0
 
 # Wifi Display
 wlan.wfd.hdcp=disable
