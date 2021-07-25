@@ -21,7 +21,7 @@
         <value>4</value>
         <value>4</value>
     </array>
-    <array name="cpu.active.cluster0">
+    <array name="cpu.core_power.cluster0">
         <value>150</value>
         <value>138</value>
         <value>129</value>
@@ -45,7 +45,7 @@
         <value>500000</value>
         <value>400000</value>
     </array>
-    <array name="cpu.active.cluster1">
+    <array name="cpu.core_power.cluster1">
         <value>852</value>
         <value>745</value>
         <value>626</value>
@@ -76,7 +76,7 @@
         <value>700000</value>
     </array>
     <item name="cpu.suspend">3.56</item>
-    <item name="cpu.awake">31.59</item>
+    <item name="cpu.idle">31.59</item>
     <item name="wakeup.power">0.15</item>
     <item name="battery.capacity">3220</item>
     <array name="wifi.batchedscan">
