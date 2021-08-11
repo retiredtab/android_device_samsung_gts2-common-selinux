@@ -82,6 +82,7 @@
         <fqname>@1.1::ICryptoFactory/widevine</fqname>
         <fqname>@1.3::IDrmFactory/clearkey</fqname>
         <fqname>@1.1::IDrmFactory/widevine</fqname>
+        <fqname>@1.0::IDrmFactory/widevine</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.gnss</name>
