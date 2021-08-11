@@ -172,6 +172,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
 # Lights
 TARGET_PROVIDES_LIBLIGHT := false
 
+# Enable memfd - needed otherwise you get crashes like Jit thread pool  >>> system_server <<<
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Samsung OpenMAX Video
 BOARD_USE_STOREMETADATA := true
 BOARD_USE_METADATABUFFERTYPE := true
