@@ -51,7 +51,7 @@ TARGET_KERNEL_HAVE_NTFS := true
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := sdfat
 
-LZMA_RAMDISK_TARGETS := boot,recovery
+BOARD_RAMDISK_USE_XZ := true
 
 BOARD_ROOT_EXTRA_FOLDERS += efs
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
