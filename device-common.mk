@@ -68,10 +68,6 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Configstore
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-impl \
-    android.hardware.configstore@1.1-service
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 
     
