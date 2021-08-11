@@ -144,6 +144,7 @@ TARGET_USES_ION := true
 
 # Hidl
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 			   
 # Lineage hardware
 ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
