@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
     libbauthtzcommon_shim
 
 # Flat device tree for boot image
-RODUCT_HOST_PACKAGES += \
+PRODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
 # FastCharge
