@@ -641,7 +641,7 @@ service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     group system inet net_raw
     ioprio be 0
 
-service swapon /sbin/sswap -s -f 1536
+service swapon /vendor/bin/sswap -s -f 1536
     class core
     user root
     group root
