@@ -619,21 +619,10 @@ service lhd /system/vendor/bin/lhd /system/vendor/etc/lhd.conf
     # Do not set any USB mode while charging
     # setprop sys.usb.config charging
 
-# SENSOR FRAMEWORK : starts fingerprintService
-service vcsFPService /vendor/bin/vcsFPService
-    class late_start
-    user system
-    group system
-
 on property:sys.mobicoredaemon.enable=true
     start cs_service
     write /proc/iccc_ready 1
 
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group input
-	
 # GPS
 service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     class main
