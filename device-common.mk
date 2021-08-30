@@ -235,8 +235,7 @@ PRODUCT_PACKAGES += \
     init.universal5433.rc \
     init.universal5433.usb.rc \
     init.wifi.rc \
-    ueventd.universal5433.rc \
-    sswap
+    ueventd.universal5433.rc
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
