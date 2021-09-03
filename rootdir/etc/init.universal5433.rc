@@ -606,12 +606,13 @@ on shutdown
     chmod 600 /sys/class/power_supply/battery/batt_capacity_max
     copy /sys/class/power_supply/battery/batt_capacity_max /efs/Battery/prev_batt_capacity_max
 
+# lhd binary causes crash in S2 tab devices, so let's comment it out.
 # SensorHub (Location Hub)
-service lhd /system/vendor/bin/lhd /system/vendor/etc/lhd.conf
-    class main
-    user gps
-    group system inet net_raw
-    ioprio be 0
+#service lhd /system/vendor/bin/lhd /system/vendor/etc/lhd.conf
+#    class main
+#    user gps
+#    group system inet net_raw
+#    ioprio be 0
 
     # EHCI runtime enable for LPA
     # write /sys/devices/platform/s5p-ehci/power/control auto
