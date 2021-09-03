@@ -1,0 +1,11 @@
+# wifiloader.te
+# Kanged from
+# https://github.com/exynos5420/android_device_samsung_universal5420-common/blob/lineage-17.1/sepolicy/vendor/wifiloader.te
+
+type wifiloader, domain;
+type wifiloader_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(wifiloader)
+
+allow wifiloader kernel:system module_request;
+allow wifiloader proc:file r_file_perms;

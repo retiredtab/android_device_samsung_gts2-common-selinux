@@ -1,0 +1,28 @@
+# CPU/Scheduler devices
+#genfscon sysfs /power/cpufreq_table         u:object_r:sysfs_devices_system_cpu:s0
+genfscon sysfs /power/cpufreq_min_limit     u:object_r:sysfs_devices_system_cpu:s0
+genfscon sysfs /power/cpufreq_max_limit     u:object_r:sysfs_devices_system_cpu:s0
+
+# CPU/Scheduler devices
+genfscon sysfs /power/cpufreq_table                       u:object_r:sysfs_power_writable:s0
+genfscon sysfs /module/cpuidle/parameters/off             u:object_r:sysfs_cpuidle_writable:s0
+
+# Storaged
+# https://review.lineageos.org/c/LineageOS/android_system_sepolicy/+/264057
+# This code below also needs to go into file_contexts.
+genfscon sysfs /devices/15540000.dwmmc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0/stat      u:object_r:sysfs_disk_stat:s0
+
+
+####################################
+# Proc
+#
+
+# VM
+genfscon proc /sys/vm/dirty_ratio               u:object_r:proc_vm:s0
+genfscon proc /sys/vm/dirty_bytes               u:object_r:proc_vm:s0
+genfscon proc /sys/vm/dirty_background_bytes    u:object_r:proc_vm:s0
+genfscon proc /sys/vm/min_free_kbytes           u:object_r:proc_vm:s0
+
+genfscon proc /sys/vm/swappiness                u:object_r:proc_vm:s0
+genfscon proc /sys/vm/vfs_cache_pressure        u:object_r:proc_vm:s0
+genfscon proc /sys/vm/lowmem_reserve_ratio      u:object_r:proc_vm:s0

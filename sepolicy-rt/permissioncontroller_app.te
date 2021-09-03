@@ -1,0 +1,5 @@
+#============= permissioncontroller_app ==============
+# device/samsung/gts2-common/sepolicy-rt/permissioncontroller_app.te:3:ERROR 'unknown type permissioncontroller_app' at token ';'
+# allow permissioncontroller_app sysfs:dir { open read };
+# allow permissioncontroller_app sysfs:file { getattr open read };
+

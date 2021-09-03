@@ -1,0 +1,201 @@
+####################################
+# data files
+/data/\.cid\.info            u:object_r:wifi_data_file:s0
+/data/\.wifiver\.info        u:object_r:wifi_data_file:s0
+
+
+# gps
+/data/system/gps(/.*)?                               u:object_r:gps_data_file:s0
+/data/gps/ctrlpipe                                   u:object_r:gps_data_file:s0
+/data/gps/\.gpslogd\.pipe                            u:object_r:gps_data_file:s0
+/data/gps/nmeapipe                                   u:object_r:gps_data_file:s0
+
+# fingerprint
+#/data/biometrics(/.*)?       u:object_r:fingerprint_data_file:s0
+
+# mobicore
+/data/misc/mcRegistry(/.*)?  u:object_r:tee_data_file:s0
+
+
+##########################
+# Devices
+#
+/dev/mali[0-9]*              u:object_r:gpu_device:s0
+
+#/dev/seiren                  u:object_r:seiren_device:s0
+
+/efs/bluetooth(/.*)?         u:object_r:bluetooth_efs_file:s0
+/efs/wifi(/.*)?              u:object_r:wifi_efs_file:s0
+
+/dev/v4l-subdev[0-9]*        u:object_r:video_device:s0
+/dev/media[0-3]*             u:object_r:camera_device:s0
+/dev/m2m1shot_jpeg           u:object_r:camera_device:s0
+
+/dev/mtp_usb*                u:object_r:mtp_device:s0
+
+/dev/ttySAC[0-9]*            u:object_r:gps_device:s0
+
+#/dev/block/mmcblk0p3         u:object_r:emmcblk_device:s0
+/dev/block/mmcblk0p9         u:object_r:boot_block_device:s0
+/dev/block/mmcblk0p10        u:object_r:recovery_block_device:s0
+/dev/block/mmcblk0p19        u:object_r:system_block_device:s0
+/dev/block/mmcblk0p20        u:object_r:cache_block_device:s0
+/dev/block/mmcblk0p22        u:object_r:userdata_block_device:s0
+
+# Secure
+/dev/s5p-smem                u:object_r:secmem_device:s0
+/dev/mobicore                u:object_r:tee_device:s0
+/dev/mobicore-user           u:object_r:tee_device:s0
+
+/dev/ttySAC3                 u:object_r:bluetooth_device:s0
+
+####################################
+# Daemons
+#
+
+/(vendor|system/vendor)/bin/gpsd                                                         u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/wifiloader                                                   u:object_r:wifiloader_exec:s0
+/(vendor|system/vendor)/bin/mcDriverDaemon                                               u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/macloader                                                    u:object_r:macloader_exec:s0
+#/(vendor|system/vendor)/bin/sensorhubservice                                             u:object_r:sensorhubservice_exec:s0
+
+
+####################################
+# efs files
+/efs/FactoryApp(/.*)?        u:object_r:app_efs_file:s0
+/efs/FactoryApp/baro_delta   u:object_r:baro_delta_factoryapp_efs_file:s0
+/efs/FactoryApp/factorymode  u:object_r:factorymode_factoryapp_efs_file:s0
+/efs/FactoryApp/fdata        u:object_r:radio_factoryapp_efs_file:s0
+/efs/FactoryApp/hist_nv      u:object_r:radio_factoryapp_efs_file:s0
+/efs/FactoryApp/test_nv      u:object_r:radio_factoryapp_efs_file:s0
+
+#/efs/bluetooth(/.*)?         u:object_r:bluetooth_efs_file:s0
+/efs/drm(/.*)?               u:object_r:drm_efs_file:s0
+/efs/gyro_cal_data           u:object_r:sensor_efs_file:s0
+#/efs/h2k\.dat                u:object_r:cpk_efs_file:s0
+#/efs/imei(/.*)?              u:object_r:imei_efs_file:s0
+#/efs/nv_data.bin(.*)         u:object_r:bin_nv_data_efs_file:s0
+#/efs/prov(/.*)?              u:object_r:prov_efs_file:s0
+#/efs/prov_data(/.*)?         u:object_r:prov_efs_file:s0
+#/efs/wifi(/.*)?              u:object_r:wifi_efs_file:s0
+#/efs/wv\.keys                u:object_r:cpk_efs_file:s0
+
+
+####################################
+# sysfs files
+#/sys/class/power_supply/battery/music -- u:object_r:sysfs_writable:s0
+#/sys/class/devfreq/exynos5-busfreq-mif(/.*)? -- u:object_r:sysfs_writable:s0
+#/sys/class/lcd(/.*)?         -- u:object_r:sysfs_writable:s0
+
+# Battery
+/sys/class/power_supply/battery/(/.*)?                                                 u:object_r:sysfs_sensor:s0
+
+# Fastcharge
+/sys/class/sec/switch(/.*)?                           u:object_r:sysfs_sec_switch:s0
+
+# Sensors
+/sys/devices/14ef0000.hsi2c/i2c-4/4-0071/power_supply/sm5703-fuelgauge(/.*)?            u:object_r:sysfs_sensor:s0
+#/sys/class/power_supply/sm5703-fuelgauge(/.*)?                                          u:object_r:sysfs_sensor:s0
+/sys/devices/platform/exynos5-devfreq-mif/devfreq/exynos5-devfreq-mif/temp_level(/.*)?  u:object_r:sysfs_sensor:s0
+
+# Storaged
+# This needs to be defined in genfs_contexts file as well.
+/sys/devices/15540000.dwmmc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0/stat                 u:object_r:sysfs_disk_stat:s0
+
+# Temp
+/sys/devices/virtual/hwmon/hwmon[0-3](/.*)                                              u:object_r:sysfs_sensor:s0
+
+# Thermal
+/sys/class/thermal(/.*)                                                                 u:object_r:sysfs_sensor:s0
+/sys/devices/virtual/thermal(/.*)                                                       u:object_r:sysfs_sensor:s0
+
+
+# bluetooth
+/sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/state  u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/type   u:object_r:sysfs_bluetooth_writable:s0
+
+# camera
+#/sys/devices/virtual/camera(/.*)?           u:object_r:sysfs_camera_writable:s0
+
+# This makes the cpu freq visible to devcheck.
+# CPU/input boosters
+/sys/devices/system/cpu/cpufreq/interactive(/.*)?   u:object_r:sysfs_interactive_writable:s0
+/sys/devices/system/cpu(/.*)?    u:object_r:sysfs_devices_system_cpu:s0
+#/sys/devices/platform/samsung-i2c(/.*)?    u:object_r:sysfs_devices_system_cpu:s0
+
+#/sys/devices/platform/s3c2440-i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[0-9]+/input(/.*)?    u:object_r:sysfs_devices_system_cpu:s0 
+
+#/sys/devices/platform/samsung-eax\.[0-9]+(/.*)?    u:object_r:sysfs_devices_system_cpu:s0 
+
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq    u:object_r:sysfs_devices_system_cpu:s0 
+
+# GPS
+/sys/class/sec/gps(/.*)                  u:object_r:sysfs_gps:s0
+/sys/devices/virtual/gpio/gpio65(/.*)    u:object_r:sysfs_gps:s0
+
+# Input
+/sys/class/input(/.*)?              u:object_r:sysfs_input:s0
+/sys/devices/virtual/input(/.*)?    u:object_r:sysfs_input:s0
+
+# mDNIe
+#/sys/devices/[0-9]*\.decon_fb/lcd/panel/mdnie/mode       u:object_r:sysfs_mdnie_writable:s0
+#/sys/devices/[0-9]*\.decon_fb/lcd/panel/mdnie/scenario   u:object_r:sysfs_mdnie_writable:s0
+
+# This allows tablet to go into deep sleep as verified by devcheck.
+# Power
+/sys/power/autosleep       u:object_r:sysfs_power:s0
+/sys/power/state           u:object_r:sysfs_power:s0
+/sys/power/wake_lock       u:object_r:sysfs_power:s0
+/sys/power/wake_unlock     u:object_r:sysfs_power:s0
+/sys/power/wakeup_count    u:object_r:sysfs_power:s0
+
+/sys/devices/platform/samsung-eax\.[0-9]+(/.*)?    u:object_r:sysfs_power_writable:s0
+
+# ZRAM
+/sys/devices/virtual/block/zram0/disksize            u:object_r:sysfs_zram:s0
+/sys/devices/virtual/block/zram0/max_comp_streams    u:object_r:sysfs_zram:s0
+
+
+####################################
+# Hal
+
+# Bluetooth
+/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service                 u:object_r:hal_bluetooth_default_exec:s0
+
+# DRM
+# kanged from https://github.com/LineageOS/android_device_motorola_msm8916-common/tree/lineage-18.1/sepolicy
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine             u:object_r:hal_drm_widevine_exec:s0
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service\.clearkey             u:object_r:hal_drm_clearkey_exec:s0
+
+/data/vendor/mediadrm(/.*)?                                                              u:object_r:mediadrm_vendor_data_file:s0
+
+# Fastcharge
+# Kanged from https://review.lineageos.org/c/LineageOS/android_device_samsung_universal7880-common/+/305244/8/sepolicy/file_contexts
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@1\.0-service\.samsung         u:object_r:hal_lineage_fastcharge_default_exec:s0
+
+# Fingerprint
+# kanged from https://github.com/LineageOS/android_device_samsung_universal7580-common/blob/lineage-18.1/sepolicy/file_contexts
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.samsung u:object_r:hal_fingerprint_default_exec:s0
+
+# Gatekeeper
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software      u:object_r:hal_gatekeeper_default_exec:s0
+
+# GNSS
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service\.universal5433       u:object_r:hal_gnss_default_exec:s0
+
+# Lights
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung            u:object_r:hal_light_default_exec:s0
+
+# Live Display
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.gts2           u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
+# /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-exynos    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
+
+# Power
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.universal5433      u:object_r:hal_power_default_exec:s0
+
+# Wifi
+#/(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@1\.0-service\.legacy              u:object_r:hal_wifi_default_exec:s0
+
+

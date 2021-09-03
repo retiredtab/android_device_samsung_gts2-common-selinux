@@ -1,0 +1,3 @@
+#============= mediaprovider ==============
+allow mediaprovider sysfs:file r_file_perms;
+

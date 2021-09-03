@@ -1,0 +1,4 @@
+#============= gallery_app ==============
+# device/samsung/gts2-common/sepolicy-rt/gallery_app.te:3:ERROR 'unknown type gallery_app' at token ';' 
+# allow gallery_app sysfs:file { open read };
+

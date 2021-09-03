@@ -1,0 +1,10 @@
+#============= hwservicemanager ==============
+allow hwservicemanager gpsd:binder transfer;
+allow hwservicemanager gpsd:dir search;
+allow hwservicemanager gpsd:file r_file_perms;
+allow hwservicemanager gpsd:process getattr;
+allow hwservicemanager init:binder transfer;
+allow hwservicemanager init:dir search;
+allow hwservicemanager init:file r_file_perms;
+allow hwservicemanager init:process getattr;
+

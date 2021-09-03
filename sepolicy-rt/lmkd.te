@@ -1,0 +1,3 @@
+#============= lmkd ==============
+allow lmkd sysfs:file { open write };
+

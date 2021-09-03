@@ -1,0 +1,8 @@
+# /dev/ttySAC3
+type bluetooth_device, dev_type;
+
+# /dev/s5p-smem
+type secmem_device, dev_type;
+
+# GPS
+type gps_device, dev_type;

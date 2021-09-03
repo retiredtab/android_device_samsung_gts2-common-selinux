@@ -1,0 +1,10 @@
+# Kanged from https://github.com/LineageOS/android_device_samsung_universal7580-common/commit/02988363b8ce289dff30ea8d3472604e7910be70#diff-b438a803f4f6ffa9b26a7c9d2d1bcd5df3c80565f0e06ae8878256dfa44dfd26
+
+# hal_drm_default
+vndbinder_use(hal_drm_default)
+
+# /dev/s5p-smem
+allow hal_drm_default secmem_device:chr_file { ioctl rw_file_perms };
+allow hal_drm_default tee:unix_stream_socket connectto;
+allow hal_drm_default efs_file:dir search;
+# allow hal_drm_default cpk_efs_file:file { getattr open read };
