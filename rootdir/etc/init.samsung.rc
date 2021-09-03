@@ -600,9 +600,10 @@ on charger
 service lpm /vendor/bin/lpm
     class charger
     critical
-	
+
+# The binary files/blobs don't even exist in our vendor repos so comment this out.
 # Sensorhub service
-service sensorhubservice /system/vendor/bin/sensorhubservice
-    class main
-    user system
-    group input
+#service sensorhubservice /system/vendor/bin/sensorhubservice
+#    class main
+#    user system
+#    group input
