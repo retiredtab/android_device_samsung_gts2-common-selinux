@@ -1,3 +1,5 @@
+# Kanged from https://github.com/LineageOS/android_device_samsung_universal7580-common/blob/lineage-18.1/sepolicy/gpsd.te
+
 type gpsd, domain;
 type gpsd_exec, exec_type, file_type, vendor_file_type;
 
@@ -6,16 +8,31 @@ init_daemon_domain(gpsd)
 # Automatically label files created in /data/system/gps as gps_data_file
 file_type_auto_trans(gpsd, system_data_file, gps_data_file)
 
+# gps
+type gps_socket, file_type;
+
+# Allow rild and netd to connect to gpsd
+unix_socket_connect(gpsd, property, netd)
+
 binder_call(gpsd, system_server)
 binder_call(gpsd, system_suspend_server)
 hwbinder_use(gpsd)
 
+# Sockets
+type_transition gpsd gps_data_file:sock_file gps_socket;
+
 allow gpsd dnsproxyd_socket:sock_file write;
 allow gpsd fwmarkd_socket:sock_file write;
+allow gpsd gps_socket:sock_file create_file_perms;
+allow gpsd self:udp_socket create_socket_perms;
+
+#
 allow gpsd gps_device:chr_file rw_file_perms;
 allow gpsd hwservicemanager:binder call;
 allow gpsd hwservicemanager_prop:file r_file_perms;
 allow gpsd netd:unix_stream_socket connectto;
+# new
+allow gpsd node:tcp_socket node_bind;
 allow gpsd port:tcp_socket name_bind;
 allow gpsd port:tcp_socket name_connect;
 allow gpsd node:tcp_socket node_bind;
@@ -27,5 +44,5 @@ allow gpsd system_data_file:dir w_dir_perms;
 allow gpsd system_data_file:fifo_file rw_file_perms;
 allow gpsd system_data_file:fifo_file unlink;
 allow gpsd system_data_file:file rw_file_perms;
-allow gpsd system_server:unix_stream_socket { read write };
+allow gpsd system_server:unix_stream_socket rw_socket_perms;
 allow gpsd system_suspend_hwservice:hwservice_manager find;
