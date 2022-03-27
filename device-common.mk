@@ -2,6 +2,10 @@ LOCAL_PATH := device/samsung/gts2-common
 
 PRODUCT_CHARACTERISTICS := tablet
 
+# API
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vndk.version=current
+
 # APN Definitions - override incomplete/broken lineageos version with Samsung version
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
