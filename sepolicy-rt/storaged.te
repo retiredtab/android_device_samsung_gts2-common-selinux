@@ -5,3 +5,5 @@
 #type storaged, domain, coredomain, mlstrustedsubject;
 #type storaged_exec, system_file_type, exec_type, file_type;
 #init_daemon_domain(storaged)
+
+# allow storaged sysfs:file { getattr open read };

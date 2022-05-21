@@ -10,7 +10,7 @@ genfscon sysfs /module/cpuidle/parameters/off             u:object_r:sysfs_cpuid
 # Storaged
 # https://review.lineageos.org/c/LineageOS/android_system_sepolicy/+/264057
 # This code below also needs to go into file_contexts.
-genfscon sysfs /devices/15540000.dwmmc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0/stat      u:object_r:sysfs_disk_stat:s0
+# genfscon sysfs /devices/15540000.dwmmc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0/stat      u:object_r:sysfs_disk_stat:s0
 
 
 ####################################

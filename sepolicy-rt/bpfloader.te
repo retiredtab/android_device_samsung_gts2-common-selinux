@@ -1,0 +1,2 @@
+#============= bpfloader ==============
+#allow bpfloader mediaserver_exec:file { getattr read };
