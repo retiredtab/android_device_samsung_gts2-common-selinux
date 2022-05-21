@@ -217,7 +217,7 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5433
 # SELinux
 #BOARD_SEPOLICY_DIRS += device/samsung/gts2-common/sepolicy
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
-#BOARD_SEPOLICY_DIRS += device/samsung/gts2-common/sepolicy-rt
+BOARD_SEPOLICY_DIRS += device/samsung/gts2-common/sepolicy-rt
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Sensors
