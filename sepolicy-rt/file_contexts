@@ -42,6 +42,9 @@
 /dev/block/mmcblk0p20        u:object_r:cache_block_device:s0
 /dev/block/mmcblk0p22        u:object_r:userdata_block_device:s0
 
+### qos
+/dev/network_throughput                      u:object_r:radio_qos_device:s0
+
 # Secure
 /dev/s5p-smem                u:object_r:secmem_device:s0
 /dev/mobicore                u:object_r:tee_device:s0
@@ -53,6 +56,7 @@
 # Daemons
 #
 
+/(vendor|system/vendor)/bin/argosd														 u:object_r:argosd_exec:s0
 /(vendor|system/vendor)/bin/gpsd                                                         u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/wifiloader                                                   u:object_r:wifiloader_exec:s0
 /(vendor|system/vendor)/bin/mcDriverDaemon                                               u:object_r:tee_exec:s0

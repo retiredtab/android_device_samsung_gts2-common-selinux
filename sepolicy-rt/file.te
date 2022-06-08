@@ -44,6 +44,7 @@ type proc_vm, fs_type, proc_type;
 type proc_wifiloader, fs_type, proc_type;
 
 # sysfs types
+type sysfs_argos, sysfs_type, r_fs_type, fs_type;
 type sysfs_ausb, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_camera, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_cpuidle_writable, fs_type, sysfs_type, mlstrustedobject;
@@ -67,6 +68,8 @@ type sysfs_muic, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_multipdp_writable, fs_type, sysfs_type, mlstrustedobject;
 
 type sysfs_power_writable, fs_type, sysfs_type, mlstrustedobject;
+
+type sysfs_scsi_host_writable, sysfs_type, rw_fs_type, fs_type;
 
 type sysfs_sec_switch, fs_type, sysfs_type, mlstrustedobject;
 
