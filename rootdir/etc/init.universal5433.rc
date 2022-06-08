@@ -631,9 +631,8 @@ service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     group system inet net_raw
     ioprio be 0
 
-# Why do we need this on S2 wifi only devices?  If needed for LTE, decommonize this code.
 # ARGOSD
-#service argos-daemon /vendor/bin/argosd
-#    class main
-#    user system
-#    group system radio
+service argos-daemon /vendor/bin/argosd
+    class main
+    user system
+    group system radio
