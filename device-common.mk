@@ -270,10 +270,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2018-01-05
 
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
-
 # VNDK
 # Patch/hexedit DRM to look for older version of libprotobuf-cpp-lite.so
 PRODUCT_COPY_FILES += \
