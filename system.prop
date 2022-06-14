@@ -69,9 +69,6 @@ ro.sys.sdcardfs=1
 # Boot directly from charger mode
 ro.enable_boot_charger_mode=1
 
-# USB
-persist.sys.usb.config=mtp
-
 # Enable ADB Debugging By Default & Disable USB Debugging Popup
 persist.adb.notify=0
 persist.service.adb.enable=1
