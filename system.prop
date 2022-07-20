@@ -43,6 +43,14 @@ debug.stagefright.omx_default_rank=0
 # Define default initial receive window size in segments.
 #net.tcp.default_init_rwnd=60
 
+# Taskbar
+# https://review.lineageos.org/q/enable+taskbar
+# https://forum.xda-developers.com/t/rom-unofficial-12l-eas-sm-t820-sm-t825-2022-07-15-lineageos-19-1-for-galaxy-tab-s3.4418855/page-5#post-87018775
+# enable on screen nav keys
+# LOS team implemented this feature a month ago, but their patch doesn't consider the old devices which has the hardware buttons.
+# So, it should be an option in the "Settings - Buttons" menu, but it only shows up for us when enabling the soft navigation bar.
+qemu.hw.mainkeys=0
+
 # WiFi
 wifi.interface=wlan0
 wifi.direct.interface=p2p-dev-wlan0
