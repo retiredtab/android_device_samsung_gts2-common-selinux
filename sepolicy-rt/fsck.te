@@ -1,3 +1,4 @@
 #============= fsck ==============
 allow fsck block_device:blk_file { ioctl open read write };
+allow fsck sysfs_batteryinfo:dir search;
 

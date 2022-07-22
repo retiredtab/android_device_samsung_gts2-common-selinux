@@ -92,7 +92,12 @@
 #/sys/class/lcd(/.*)?         -- u:object_r:sysfs_writable:s0
 
 # Battery
-/sys/class/power_supply/battery/(/.*)?                                                 u:object_r:sysfs_sensor:s0
+/sys/class/power_supply/battery(/.*)?                                                  u:object_r:sysfs_sensor:s0
+
+# Battery/charger - for LineageOS charger
+/sys/devices/14ef0000.hsi2c(/.*)?                                                      u:object_r:sysfs_batteryinfo:s0
+/sys/class/power_supply(/.*)?                                                          u:object_r:sysfs_batteryinfo:s0
+
 
 # Fastcharge
 /sys/class/sec/switch(/.*)?                           u:object_r:sysfs_sec_switch:s0
