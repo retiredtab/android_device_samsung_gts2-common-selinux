@@ -1,6 +1,5 @@
 #============= init ==============
 allow init block_device:blk_file write;
-allow init system_data_file:file lock;
 allow init default_android_service:service_manager add;
 allow init device:chr_file rw_file_perms;
 allow init dnsproxyd_socket:sock_file write;
@@ -32,10 +31,13 @@ allow init self:netlink_socket { bind create read };
 allow init self:tcp_socket create_socket_perms;
 allow init sensorservice_service:service_manager find;
 allow init servicemanager:binder { call transfer };
+allow init sysfs:file create_file_perms;
+allow init sysfs_batteryinfo:lnk_file read;
 allow init sysfs_bluetooth_writable:file setattr;
 allow init sysfs_devices_system_cpu:file write;
-allow init sysfs:file create_file_perms;
 allow init sysfs_sec_switch:lnk_file read;
+allow init sysfs_sensor:lnk_file read;
+allow init system_data_file:file lock;
 allow init system_data_file:file lock;
 allow init system_data_root_file:file rename;
 allow init system_file:file execute_no_trans;
@@ -46,3 +48,6 @@ allow init system_server:unix_stream_socket read;
 allow init vendor_file:file execute_no_trans;
 allow init vndbinder_device:chr_file rw_file_perms;
 
+allow init {
+    sysfs_batteryinfo
+}:file setattr;

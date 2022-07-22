@@ -1,5 +1,6 @@
 #============= system_server ==============
 allow system_server app_zygote:process getpgid;
+allow system_server build_bootimage_prop:file read;
 allow system_server debugfs:dir { open read };
 allow system_server debugfs:file r_file_perms;
 allow system_server device:chr_file rw_file_perms;
@@ -11,4 +12,3 @@ allow system_server system_file:file ioctl;
 allow system_server userspace_reboot_config_prop:file r_file_perms;
 allow system_server userspace_reboot_exported_prop:file r_file_perms;
 allow system_server vendor_security_patch_level_prop:file r_file_perms;
-

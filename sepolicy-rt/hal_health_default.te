@@ -4,3 +4,6 @@ allow hal_health_default sysfs_sensor:dir search;
 allow hal_health_default sysfs_sensor:file r_file_perms;
 allow hal_health_default sysfs_sensor:lnk_file read;
 
+allow hal_health_default {
+    sysfs_batteryinfo
+}:file r_file_perms;
