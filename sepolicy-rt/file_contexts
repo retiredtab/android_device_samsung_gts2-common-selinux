@@ -24,9 +24,6 @@
 
 #/dev/seiren                  u:object_r:seiren_device:s0
 
-/efs/bluetooth(/.*)?         u:object_r:bluetooth_efs_file:s0
-/efs/wifi(/.*)?              u:object_r:wifi_efs_file:s0
-
 /dev/v4l-subdev[0-9]*        u:object_r:video_device:s0
 /dev/media[0-3]*             u:object_r:camera_device:s0
 /dev/m2m1shot_jpeg           u:object_r:camera_device:s0
@@ -41,9 +38,6 @@
 /dev/block/mmcblk0p19        u:object_r:system_block_device:s0
 /dev/block/mmcblk0p20        u:object_r:cache_block_device:s0
 /dev/block/mmcblk0p22        u:object_r:userdata_block_device:s0
-
-### qos
-/dev/network_throughput                      u:object_r:radio_qos_device:s0
 
 # Secure
 /dev/s5p-smem                u:object_r:secmem_device:s0
@@ -193,20 +187,9 @@
 # GNSS
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service\.universal5433       u:object_r:hal_gnss_default_exec:s0
 
-# Lights
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung            u:object_r:hal_light_default_exec:s0
-
 # Live Display
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.gts2           u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 # /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-exynos    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 
-# Power
-# /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.universal5433      u:object_r:hal_power_default_exec:s0
-# from https://review.lineageos.org/c/LineageOS/android_device_samsung_slsi_sepolicy/+/304166
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light(@[0-9].[0-9])?-service\.samsung           u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power(@[0-9]\.[0-9])?-service\.samsung-libperfmgr   u:object_r:hal_power_default_exec:s0
-
 # Wifi
 #/(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@1\.0-service\.legacy              u:object_r:hal_wifi_default_exec:s0
-
-

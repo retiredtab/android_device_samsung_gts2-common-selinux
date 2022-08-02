@@ -1,9 +1,6 @@
 # /dev/ttySAC3
 type bluetooth_device, dev_type;
 
-# for argosd
-type radio_qos_device, dev_type;
-
 # /dev/s5p-smem
 type secmem_device, dev_type;
 

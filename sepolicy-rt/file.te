@@ -1,18 +1,8 @@
-### efs types
-type app_efs_file, file_type;
-type wifi_efs_file, file_type;
-
-# DRM
-# type mediadrm_vendor_data_file, file_type, data_file_type;
-
 # Kanged from https://github.com/exynos5420/android_device_samsung_universal5420-common/blob/lineage-18.1/sepolicy/vendor/file.te
 
 # file.te
 
 # data types
-type audit_data_file, data_file_type, file_type;
-type camera_vendor_data_file, data_file_type, file_type;
-type display_vendor_data_file, file_type, data_file_type;
 type gps_data_file, file_type, data_file_type, core_data_file_type;
 type mediadrm_vendor_data_file, file_type, data_file_type;
 type security_data_file, file_type, data_file_type;
@@ -44,7 +34,6 @@ type proc_vm, fs_type, proc_type;
 type proc_wifiloader, fs_type, proc_type;
 
 # sysfs types
-type sysfs_argos, sysfs_type, r_fs_type, fs_type;
 type sysfs_ausb, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_camera, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_cpuidle_writable, fs_type, sysfs_type, mlstrustedobject;
@@ -52,9 +41,6 @@ type sysfs_gps, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_homebutton_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_interactive_writable, fs_type, sysfs_type, mlstrustedobject;
-
-# type sysfs_input, fs_type, sysfs_type, fs_type, mlstrustedobject;
-type sysfs_input, fs_type, sysfs_type, mlstrustedobject;
 
 type sysfs_jack, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_light, fs_type, sysfs_type, mlstrustedobject;
@@ -66,12 +52,6 @@ type sysfs_mmu, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_mfc, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_muic, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_multipdp_writable, fs_type, sysfs_type, mlstrustedobject;
-
-type sysfs_power_writable, fs_type, sysfs_type, mlstrustedobject;
-
-type sysfs_scsi_host_writable, sysfs_type, rw_fs_type, fs_type;
-
-type sysfs_sec_switch, fs_type, sysfs_type, mlstrustedobject;
 
 type sysfs_sec_touchkey, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_usb_host, fs_type, sysfs_type, mlstrustedobject;

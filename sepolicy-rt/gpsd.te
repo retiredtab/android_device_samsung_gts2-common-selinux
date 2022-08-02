@@ -1,8 +1,5 @@
 # Kanged from https://github.com/LineageOS/android_device_samsung_universal7580-common/blob/lineage-18.1/sepolicy/gpsd.te
 
-type gpsd, domain;
-type gpsd_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(gpsd)
 
 # Automatically label files created in /data/system/gps as gps_data_file

@@ -1,9 +1,4 @@
 # CPU/Scheduler devices
-#genfscon sysfs /power/cpufreq_table         u:object_r:sysfs_devices_system_cpu:s0
-genfscon sysfs /power/cpufreq_min_limit     u:object_r:sysfs_devices_system_cpu:s0
-genfscon sysfs /power/cpufreq_max_limit     u:object_r:sysfs_devices_system_cpu:s0
-
-# CPU/Scheduler devices
 genfscon sysfs /power/cpufreq_table                       u:object_r:sysfs_power_writable:s0
 genfscon sysfs /module/cpuidle/parameters/off             u:object_r:sysfs_cpuidle_writable:s0
 

@@ -1,2 +1,12 @@
 #============= toolbox ==============
-allow toolbox ram_device:blk_file { getattr ioctl open read write };
+allow toolbox platform_app:file getattr;
+allow toolbox proc:file getattr;
+allow toolbox proc_diskstats:file getattr;
+allow toolbox proc_keys:file getattr;
+allow toolbox proc_kpageflags:file getattr;
+allow toolbox proc_last_kmsg:file getattr;
+allow toolbox proc_sysrq:file getattr;
+allow toolbox ram_device:blk_file rw_file_perms;
+allow toolbox shell:dir r_dir_perms;
+allow toolbox shell:file r_file_perms;
+allow toolbox system_app:dir getattr;
