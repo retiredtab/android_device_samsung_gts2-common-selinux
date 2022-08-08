@@ -1,3 +1,4 @@
 #============= hal_lineage_livedisplay_sysfs ==============
-allow hal_lineage_livedisplay_sysfs sysfs:file { getattr open read write };
-
+allow hal_lineage_livedisplay_sysfs sysfs:file rw_file_perms;
+allow hal_lineage_livedisplay_sysfs vendor_data_file:dir rw_dir_perms;
+allow hal_lineage_livedisplay_sysfs vendor_data_file:file create_file_perms;
