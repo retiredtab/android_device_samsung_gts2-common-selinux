@@ -581,14 +581,7 @@ on property:ro.debuggable=1
 
 # LPM
 on property:ro.bootmode=charger
-    write /sys/fs/selinux/enforce 0
     class_start charger
-#    start lpm
-
-#service lpm /vendor/bin/lpm
-#    class charger
-#    capabilities SYS_BOOT
-#    critical
 
 on charger
     # Set cpu governor to powersave while in charging mode
@@ -603,7 +596,6 @@ service cameraserver /system/bin/cameraserver
     group media_rw audio camera drmrpc inet shell sdcard_r system
 
 on shutdown
-    write /sys/fs/selinux/enforce 0
     # Fix permissions then store the current batt_capacity_max value in the EFS partition
     chmod 600 /sys/class/power_supply/battery/batt_capacity_max
     copy /sys/class/power_supply/battery/batt_capacity_max /efs/Battery/prev_batt_capacity_max

@@ -1,11 +1,9 @@
 #============= vendor_init ==============
 allow vendor_init gps_data_file:dir create_dir_perms;
-allow vendor_init kernel:security setenforce;
 allow vendor_init media_data_file:dir create_dir_perms;
 allow vendor_init media_rw_data_file:dir getattr;
 allow vendor_init proc:file write;
 allow vendor_init proc_vm:file write;
-allow vendor_init selinuxfs:file write;
 allow vendor_init system_data_file:dir create_dir_perms;
 allow vendor_init tmpfs:dir { add_name write };
 allow vendor_init tmpfs:lnk_file create;
