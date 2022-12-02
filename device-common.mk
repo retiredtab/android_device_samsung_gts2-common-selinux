@@ -263,7 +263,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/samsung/aidl/power-libperfmgr
+    hardware/samsung/aidl/power-libperfmgr \
+    hardware/samsung
 
 # System
 PRODUCT_PROPERTY_OVERRIDES += \
