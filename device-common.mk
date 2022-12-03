@@ -13,6 +13,9 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio.service.exynos5 \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     audio.primary.universal5433 \
