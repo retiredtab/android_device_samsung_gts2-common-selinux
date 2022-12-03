@@ -144,6 +144,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libhwbinder \
+    libhidltransport \
     vndservicemanager
 
 # Keylayout
