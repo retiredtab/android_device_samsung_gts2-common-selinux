@@ -56,16 +56,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-legacy \
     camera.device@1.0-impl-legacy \
-    camera.universal5433 \
     libexynoscamera_shim \
-    libstagefright_shim \
-    Snap
+    libstagefright_shim
 
 # Charger
 PRODUCT_PACKAGES += \
     charger \
-    charger_res_images \
-    lineage_charger_res_images
+    charger_res_images
 
 # Codecs
 PRODUCT_PACKAGES += \
@@ -92,7 +89,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.1-service.widevine \
     android.hardware.drm@1.4-service.clearkey
 
 # Fingerprint
@@ -271,10 +267,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.binary_xml=false
 
-# TextClassifier smart selection model files
-PRODUCT_PACKAGES += \
-    textclassifier.smartselection.bundle1
-
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
@@ -297,8 +289,6 @@ PRODUCT_PACKAGES += \
     macloader \
     wificond \
     wifiloader \
-    wifilogd \
-    wlutil \
     wpa_supplicant \
     wpa_supplicant.conf
 
