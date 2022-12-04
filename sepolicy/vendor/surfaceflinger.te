@@ -1,0 +1,13 @@
+#============= surfaceflinger ==============
+allow surfaceflinger bootanim:dir search;
+allow surfaceflinger bootanim:file r_file_perms;
+allow surfaceflinger bootanim:process getattr;
+allow surfaceflinger device:chr_file rw_file_perms;
+allow surfaceflinger device:file rw_file_perms;
+allow surfaceflinger init:binder call;
+allow surfaceflinger platform_app:process getattr;
+allow surfaceflinger priv_app:process getattr;
+allow surfaceflinger sysfs:dir { open read };
+allow surfaceflinger system_app:process getattr;
+allow surfaceflinger system_server:process getattr;
+allow surfaceflinger vendor_default_prop:file r_file_perms;

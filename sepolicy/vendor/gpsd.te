@@ -15,6 +15,8 @@ binder_call(gpsd, system_server)
 binder_call(gpsd, system_suspend_server)
 hwbinder_use(gpsd)
 
+allow gpsd hal_system_suspend_service:service_manager find;
+
 # Sockets
 type_transition gpsd gps_data_file:sock_file gps_socket;
 
@@ -25,6 +27,7 @@ allow gpsd self:udp_socket create_socket_perms;
 
 #
 allow gpsd gps_device:chr_file rw_file_perms;
+allow gpsd hal_system_suspend_service:service_manager find;
 allow gpsd hwservicemanager:binder call;
 allow gpsd hwservicemanager_prop:file r_file_perms;
 allow gpsd netd:unix_stream_socket connectto;
@@ -36,6 +39,7 @@ allow gpsd node:tcp_socket node_bind;
 allow gpsd self:tcp_socket create_socket_perms;
 allow gpsd sensorservice_service:service_manager find;
 allow gpsd servicemanager:binder call;
+allow gpsd shell_exec:file execute;
 allow gpsd sysfs:file rw_file_perms;
 allow gpsd system_data_file:dir w_dir_perms;
 allow gpsd system_data_file:fifo_file rw_file_perms;

@@ -1,0 +1,5 @@
+#============= installd ==============
+allow installd self:capability sys_ptrace;
+allow installd system_server:dir search;
+allow installd system_server:file { open read };
+allow installd system_server:process getattr;

@@ -1,0 +1,4 @@
+#============= audioserver ==============
+allow audioserver init:binder { call transfer };
+allow audioserver mediaserver_exec:file r_file_perms;
+allow audioserver vendor_default_prop:file r_file_perms;

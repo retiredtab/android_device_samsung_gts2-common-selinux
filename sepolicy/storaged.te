@@ -1,9 +1,0 @@
-#============= storaged ==============
-# Kanged from https://android.googlesource.com/platform/system/sepolicy/+/ffa9bb9c6d61985503b20cf7f1edd4747f954953/private/storaged.te
-
-# storaged daemon
-#type storaged, domain, coredomain, mlstrustedsubject;
-#type storaged_exec, system_file_type, exec_type, file_type;
-#init_daemon_domain(storaged)
-
-# allow storaged sysfs:file { getattr open read };

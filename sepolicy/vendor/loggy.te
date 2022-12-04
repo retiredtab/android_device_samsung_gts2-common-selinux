@@ -1,0 +1,14 @@
+#============= toolbox ==============
+allow toolbox cache_file:file write;
+allow toolbox init:fifo_file write;
+allow toolbox kernel:system syslog_read;
+allow toolbox kmsg_device:chr_file { open read };
+allow toolbox proc_last_kmsg:file { open read };
+allow toolbox self:capability dac_override;
+allow toolbox tombstone_data_file:dir getattr;
+
+#============= logpersist ==============
+allow logpersist cache_file:dir { add_name open read write };
+allow logpersist cache_file:file { append create getattr ioctl open };
+allow logpersist self:capability dac_override;
+

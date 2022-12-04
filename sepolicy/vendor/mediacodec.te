@@ -1,0 +1,3 @@
+#============= mediacodec ==============
+allow mediacodec default_android_vndservice:service_manager find;
+allow mediacodec sysfs:file r_file_perms;

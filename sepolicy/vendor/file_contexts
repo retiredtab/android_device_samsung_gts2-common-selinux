@@ -153,6 +153,9 @@
 
 /sys/devices/platform/samsung-eax\.[0-9]+(/.*)?    u:object_r:sysfs_power_writable:s0
 
+# Wakeup
+/sys/devices/platform/(.*)/wakeup[0-9]*(/.*)?                                     u:object_r:sysfs_wakeup:s0
+
 # ZRAM
 /sys/devices/virtual/block/zram0/disksize            u:object_r:sysfs_zram:s0
 /sys/devices/virtual/block/zram0/max_comp_streams    u:object_r:sysfs_zram:s0
@@ -160,6 +163,12 @@
 
 ####################################
 # Hal
+
+# Audio
+# init: Could not start service 'vendor.audio-hal' as part of class 'hal': File /vendor/bin/hw/android.hardware.audio.service.exynos5
+# (labeled "u:object_r:vendor_file:s0") has incorrect label or no domain transition from u:r:init:s0 to another SELinux domain defined.
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service\.exynos5                u:object_r:hal_audio_default_exec:s0
 
 # Bluetooth
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service                 u:object_r:hal_bluetooth_default_exec:s0

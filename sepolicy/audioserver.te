@@ -1,3 +1,0 @@
-#============= audioserver ==============
-allow audioserver mediaserver_exec:file { getattr read };
-allow audioserver vendor_default_prop:file { getattr open read };

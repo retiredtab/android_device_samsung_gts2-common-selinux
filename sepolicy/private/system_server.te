@@ -1,0 +1,5 @@
+#============= system_server ==============
+allow system_server mediaprovider_app:process getattr;
+allow system_server permissioncontroller_app:process getattr;
+allow system_server priv_app:process getattr;
+allow system_server system_app:process getattr;

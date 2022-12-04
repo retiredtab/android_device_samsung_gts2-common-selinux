@@ -1,6 +1,0 @@
-#============= surfaceflinger ==============
-allow surfaceflinger device:chr_file { getattr ioctl open read write };
-allow surfaceflinger device:file { open write };
-allow surfaceflinger init:binder call;
-allow surfaceflinger sysfs:dir { open read };
-

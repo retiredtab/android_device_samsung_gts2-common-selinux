@@ -1,3 +1,0 @@
-#============= mediacodec ==============
-allow mediacodec sysfs:file { getattr open read };
-
