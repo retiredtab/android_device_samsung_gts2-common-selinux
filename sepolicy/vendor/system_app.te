@@ -1,6 +1,6 @@
 #============= system_app ==============
 allow system_app device:chr_file rw_file_perms;
-allow system_app proc_pagetypeinfo:file read;
+allow system_app proc_pagetypeinfo:file r_file_perms;
 allow system_app sysfs:dir { open read };
 allow system_app sysfs:file r_file_perms;
 

@@ -1,3 +1,4 @@
 #============= netd ==============
 allow netd gpsd:fd use;
 allow netd gpsd:tcp_socket rw_socket_perms_no_ioctl;
+allow netd sysfs:file w_file_perms;

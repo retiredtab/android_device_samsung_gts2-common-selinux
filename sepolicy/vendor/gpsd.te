@@ -39,7 +39,7 @@ allow gpsd node:tcp_socket node_bind;
 allow gpsd self:tcp_socket create_socket_perms;
 allow gpsd sensorservice_service:service_manager find;
 allow gpsd servicemanager:binder call;
-allow gpsd shell_exec:file execute;
+allow gpsd shell_exec:file rx_file_perms;
 allow gpsd sysfs:file rw_file_perms;
 allow gpsd system_data_file:dir w_dir_perms;
 allow gpsd system_data_file:fifo_file rw_file_perms;
