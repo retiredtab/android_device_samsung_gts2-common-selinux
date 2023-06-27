@@ -104,4 +104,5 @@ sys.usb.ffs.aio_compat=1
 
 # HW Composer
 debug.hwc.winupdate=0
+debug.renderengine.backend=gles
 debug.sf.latch_unsignaled=1
