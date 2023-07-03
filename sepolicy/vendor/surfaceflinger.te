@@ -11,3 +11,4 @@ allow surfaceflinger sysfs:dir { open read };
 allow surfaceflinger system_app:process getattr;
 allow surfaceflinger system_server:process getattr;
 allow surfaceflinger vendor_default_prop:file r_file_perms;
+allow surfaceflinger vendor_hwc_prop:file r_file_perms;
