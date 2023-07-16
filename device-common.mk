@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
 
 # Codecs
 PRODUCT_PACKAGES += \
-    libExynosOMX_Core \
+    libion_exynos \
     libstagefrighthw
 
 # Configstore
@@ -184,6 +184,10 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     libandroid_net \
     netutils-wrapper-1.0
+
+# OMX
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
