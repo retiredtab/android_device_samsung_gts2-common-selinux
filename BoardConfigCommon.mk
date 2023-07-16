@@ -131,7 +131,8 @@ USE_OPENGL_RENDERER := true
 # Low memory devices
 MALLOC_SVELTE := true
 
-BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
+# remove this driver as we are using 5433 R22P0 now
+# BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
 
 # (G)SCALER
 BOARD_USES_SCALER := true
