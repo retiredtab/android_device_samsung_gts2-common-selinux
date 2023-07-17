@@ -133,6 +133,7 @@ MALLOC_SVELTE := true
 
 # remove this driver as we are using 5433 R22P0 now
 # BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
+BOARD_USES_EXYNOS5_COMMON_GRALLOC := false
 
 # (G)SCALER
 BOARD_USES_SCALER := true
