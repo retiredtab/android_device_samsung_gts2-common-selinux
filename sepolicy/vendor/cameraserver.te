@@ -2,4 +2,4 @@
 allow cameraserver device:chr_file rw_file_perms;
 allow cameraserver media_rw_data_file:dir search;
 allow cameraserver sysfs:file r_file_perms;
-
+allow cameraserver unlabeled:dir search;
