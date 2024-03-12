@@ -1,6 +1,6 @@
 #============= init ==============
+allow init app_data_file:dir { getattr relabelfrom };
 allow init block_device:blk_file write;
-allow init system_data_file:file lock;
 allow init default_android_service:service_manager add;
 allow init device:chr_file rw_file_perms;
 allow init dnsproxyd_socket:sock_file write;
@@ -23,17 +23,22 @@ allow init hwservicemanager:binder { call transfer };
 allow init kernel:system module_request;
 allow init netd:unix_stream_socket connectto;
 allow init port:tcp_socket name_connect;
+allow init privapp_data_file:dir { getattr relabelfrom };
 allow init proc:file setattr;
 allow init ram_device:blk_file write;
+allow init seapp_contexts_file:file r_file_perms;
 allow init self:netlink_socket { bind create read };
 allow init self:tcp_socket create_socket_perms;
 allow init sensorservice_service:service_manager find;
 allow init servicemanager:binder { call transfer };
-allow init sysfs_bluetooth_writable:file setattr;
+allow init shell_data_file:dir relabelfrom;
 allow init sysfs:file create_file_perms;
 allow init sysfs_batteryinfo:lnk_file read;
+allow init sysfs_bluetooth_writable:file setattr;
 allow init sysfs_sec_switch:lnk_file read;
 allow init sysfs_sensor:lnk_file read;
+allow init system_app_data_file:dir { getattr relabelfrom };
+allow init system_data_file:file lock;
 allow init system_data_file:file lock;
 allow init system_data_root_file:file rename;
 allow init system_file:file execute_no_trans;
@@ -43,4 +48,3 @@ allow init system_server:binder transfer;
 allow init system_server:unix_stream_socket read;
 allow init vendor_file:file execute_no_trans;
 allow init vndbinder_device:chr_file rw_file_perms;
-

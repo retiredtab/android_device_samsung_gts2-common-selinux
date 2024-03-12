@@ -1,0 +1,2 @@
+#============= migrate_legacy_obb_data ==============
+allow migrate_legacy_obb_data unlabeled:dir rw_dir_perms;

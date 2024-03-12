@@ -1,2 +1,3 @@
 #============= toolbox ==============
 allow toolbox ram_device:blk_file { getattr open read write };
+allow toolbox unlabeled:dir create_dir_perms;

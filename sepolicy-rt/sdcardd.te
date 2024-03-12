@@ -1,0 +1,2 @@
+#============= sdcardd ==============
+allow sdcardd unlabeled:dir r_dir_perms;
