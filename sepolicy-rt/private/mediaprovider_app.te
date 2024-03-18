@@ -1,0 +1,2 @@
+#============= mediaprovider_app ==============
+allow mediaprovider_app unlabeled:dir r_dir_perms;

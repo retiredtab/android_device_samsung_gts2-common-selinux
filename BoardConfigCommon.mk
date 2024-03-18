@@ -219,6 +219,7 @@ include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 BOARD_SEPOLICY_DIRS += device/samsung/gts2-common/sepolicy-rt
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/samsung/gts2-common/sepolicy-rt/private
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Sensors
